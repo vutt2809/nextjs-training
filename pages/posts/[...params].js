@@ -2,6 +2,9 @@ import { useRouter } from 'next/router';
 
 export default function PostParamPage() {
     const router = useRouter();
+
+    console.log('Post param router: ', router.query);
+
     return (
         <div>
             <h2>Post Param Page</h2>
