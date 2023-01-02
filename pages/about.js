@@ -1,22 +1,18 @@
-import { useRouter } from 'next/router';
+import styled from 'styled-components';
+import styles from '../styles/About.module.scss';
+
+const Button = styled.button`
+    font-size: ${({ theme }) => theme.sizes.large};
+    color: ${({ theme }) => theme.colors.success};
+    border-radius: 20px;
+`;
 
 export default function AboutPage() {
-    const router = useRouter();
-
-    console.log('About param: ', router.query);
-
     return (
         <div>
-            <h2>About Page</h2>
-
-            <p>Params: {JSON.stringify(router.query)}</p>
+            <h2 className={styles.highlightscss}>About Page</h2>
+            <button className="btn btn-primary">Primary Button</button>
+            <Button>Custom Button</Button>
         </div>
     );
-}
-
-// SSR -> Generate HTML in Server -> Return client(Query information)
-export async function getServerSideProps() {
-    return {
-        props: {},
-    };
 }
