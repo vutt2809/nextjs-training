@@ -5,18 +5,12 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { Inter } from '@next/font/google';
 import styles from '../styles/Home.module.css';
-import styled from 'styled-components';
-
-const Wrapper = styled.div`
-    color: blue;
-    text-align: center;
-`;
 
 const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
     return (
-        <Wrapper>
+        <>
             <Head>
                 <title>Fresher Project</title>
                 <link rel="icon" href="/favicon.ico" />
@@ -119,6 +113,6 @@ export default function Home() {
                     </a>
                 </div>
             </main>
-        </Wrapper>
+        </>
     );
 }
