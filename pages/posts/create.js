@@ -5,3 +5,5 @@ export default function CreatePostPage() {
         </div>
     );
 }
+
+CreatePostPage.auth = true;

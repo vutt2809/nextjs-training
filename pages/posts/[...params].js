@@ -12,3 +12,5 @@ export default function PostParamPage() {
         </div>
     );
 }
+
+PostParamPage.auth = true;

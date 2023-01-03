@@ -10,3 +10,5 @@ export default function PostDetailPage() {
         </div>
     );
 }
+
+PostDetailPage.auth = true;

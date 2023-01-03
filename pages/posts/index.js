@@ -5,3 +5,5 @@ export default function PostHomePage() {
         </div>
     );
 }
+
+PostHomePage.auth = true;
