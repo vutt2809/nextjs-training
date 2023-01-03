@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import Navbar from '../components/Navbar/Navbar';
 import styles from '../styles/About.module.scss';
 
 const Button = styled.button`
@@ -11,7 +10,6 @@ const Button = styled.button`
 export default function AboutPage() {
     return (
         <div>
-            <Navbar />
             <h2 className={styles.highlightscss}>About Page</h2>
             <button className="btn btn-primary">Primary Button</button>
             <Button>Custom Button</Button>

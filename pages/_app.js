@@ -1,16 +1,18 @@
 /* eslint-disable @next/next/no-css-tags */
 import Head from 'next/head';
-import { Provider, SessionProvider } from 'next-auth/react';
+import { SessionProvider } from 'next-auth/react';
 import '../styles/globals.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { ThemeProvider } from 'styled-components';
 import '../components/Navbar/Navbar.scss';
 import Auth from '../components/Auth';
+import Layout from '../components/Layout';
 
 const theme = {
     colors: {
         primary: '#355C7D',
         success: '#f0f0f0',
+        white: '#f5f5f5',
     },
 
     sizes: {
@@ -28,15 +30,17 @@ export default function App({ Component, pageProps }) {
                     <title>Create Next App Edit</title>
                     <link rel="stylesheet" href="/css/global.css" />
                 </Head>
-                <ThemeProvider theme={theme}>
-                    {Component.auth ? (
-                        <Auth>
+                <Layout>
+                    <ThemeProvider theme={theme}>
+                        {Component.auth ? (
+                            <Auth>
+                                <Component {...pageProps} />
+                            </Auth>
+                        ) : (
                             <Component {...pageProps} />
-                        </Auth>
-                    ) : (
-                        <Component {...pageProps} />
-                    )}
-                </ThemeProvider>
+                        )}
+                    </ThemeProvider>
+                </Layout>
             </div>
         </SessionProvider>
     );

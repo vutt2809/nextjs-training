@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Navbar from '../../components/Navbar/Navbar';
 
 export default function CommentsPage() {
     const [comments, setComments] = useState([]);
@@ -32,7 +31,6 @@ export default function CommentsPage() {
 
     return (
         <>
-            <Navbar />
             <div>
                 <input type="text" value={comment} onChange={(e) => setComment(e.target.value)} />
                 <button onClick={submitComment}>Submit Comment</button>
